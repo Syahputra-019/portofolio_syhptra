@@ -11,15 +11,6 @@ Route::get('/', function () {
 });
 Route::get('/', [TentangController::class, 'welcome'])->name('home');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
-
-Route::get('/myhobby', function () {
-    return view('myhobby');
-})->name('myhobby');
-
-
 Route::get('/dashboard', [TentangController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');

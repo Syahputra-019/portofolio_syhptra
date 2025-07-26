@@ -26,9 +26,7 @@
             <div class="logo"><h2>HalloPutz</h2></div>
             <div class="navbar">
                 <ul>
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="{{ route('about') }}">About</a></li>
-                    <li><a href="{{ route('myhobby') }}">My Hobby</a></li>
+                    <li>My Portofolio</li>
                 </ul>
             </div>
             <div class="button">
@@ -56,6 +54,48 @@
             <div class="left">
                 <div class="image">
                     <img src="{{ URL('images/Fotoputra.jpg') }}" alt=""/>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <body>
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="right">
+                <h1>Motivasi hidup</h1>
+                <p>Kegigihan dalam berusaha menjadi kunci utama untuk mencapai tujuan, 
+                karena tanpa ketekunan, kita mudah menyerah di tengah jalan ketika menghadapi tantangan.
+                Setiap langkah kecil yang kita ambil dengan tekad yang kuat, meskipun penuh rintangan, 
+                akan membawa kita lebih dekat pada impian kita. Terkadang, jalan menuju kesuksesan tidak selalu mulus, 
+                namun dengan kegigihan, kita mampu mengatasi setiap hambatan yang ada dan terus maju. 
+                Mungkin pada awalnya hasilnya tidak segera terlihat, tetapi ingatlah bahwa usaha yang konsisten dan gigih 
+                akan membuahkan hasil yang luar biasa pada waktunya. Jadi, tetaplah bersemangat dan terus berusaha, 
+                karena di balik setiap perjuangan, ada keberhasilan yang menanti.
+                </p>
+            </div>
+
+            <div class="left">
+                <div class="image">
+                    <img src="{{ URL('images/putra.jpg') }}" alt=""/>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <body>
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="right">
+                <h1>My Hobby</h1>
+                <p>
+                    Hobi bermain Mobile Legends adalah kegiatan yang menyenangkan bagi banyak orang, di mana pemain dapat menikmati tantangan strategi dan kerja sama tim dalam permainan MOBA (Multiplayer Online Battle Arena). Dalam Mobile Legends, pemain berkompetisi untuk mengalahkan tim lawan dengan menggunakan berbagai karakter atau hero dengan kemampuan unik. Hobi ini juga mengasah keterampilan taktik, koordinasi tim, dan refleks. Selain keseruan permainan, pemain sering kali terlibat dalam komunitas untuk berbagi tips, trik, dan pengalaman, serta mengikuti turnamen yang semakin populer.
+                </p>
+            </div>
+
+            <div class="left">
+                <div class="image">
+                    <img src="{{ URL('images/icon1.jpg') }}" alt=""/>
                 </div>
             </div>
         </div>

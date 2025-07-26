@@ -18,28 +18,11 @@ class TentangController extends Controller
         return view('welcome', compact('tentang'));
     }
 
-    public function about()
-    {
-        return view('about');
-    }
-
-    public function myhobby()
-    {
-        return view('myhobby');
-    }
-
-
-    // public function edit()
-    // {
-    //     $tentang = tentang::first(); // Asumsikan hanya ada 1 data
-    //     return view('tentangs.edit', compact('tentang'));
-    // }
     public function edit()
     {
         $data = Tentang::first(); // atau Tentang::where('user_id', auth()->id())->first();
         return view('tentangs.edit', compact('data'));
     }
-
 
     public function update(Request $request, $id)
     {
