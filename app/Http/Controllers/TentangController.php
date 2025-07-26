@@ -12,6 +12,22 @@ class TentangController extends Controller
         $tentang = tentang::all();
         return view('dashboard', compact('tentang'));
     }
+    public function welcome()
+    {
+        $tentang = Tentang::all(); // Ambil semua data dari model Tentang
+        return view('welcome', compact('tentang'));
+    }
+
+    public function about()
+    {
+        return view('about');
+    }
+
+    public function myhobby()
+    {
+        return view('myhobby');
+    }
+
 
     // public function edit()
     // {

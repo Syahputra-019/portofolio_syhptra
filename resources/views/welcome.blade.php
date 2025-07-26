@@ -9,7 +9,8 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <!-- Styles / Scripts -->
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -19,51 +20,44 @@
             </style>
         @endif
     </head>
-    <body class="bg-[#677075]">
+
+    <body>
         <header>
-            <nav class="flex justify-end px-6 py-6 space-x-4">
-            @if (Route::has('login'))
-                <nav>
-                    @auth
-                        <a
-                            href="{{ url('/dashboard') }}"
-                            class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#ffffff] hover:border-[#ffffff] border text-[#ffffff] dark:border-[#3E3E3A] dark:hover:border-[#ffffff] hover:bg-white rounded-sm text-sm leading-normal"
-                        >
-                            Dashboard
-                        </a>
-                    @else
-                        <a
-                            href="{{ route('login') }}"
-                            class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#ffffff] dark:hover:border-[#ffffff] hover:bg-[#c8c9c9] rounded-sm text-sm leading-normal"
-                        >
-                            Log in
-                        </a>
-
-                        @if (Route::has('register'))
-                            <a
-                                href="{{ route('register') }}"
-                                class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#f7f6f5] hover:border-[#ffffff] dark:hover:border-[#ffffff] hover:bg-[#c8c9c9] rounded-sm text-sm leading-normal">
-                                Register
-                            </a>
-                        @endif
-                    @endauth
-                </nav>
-            @endif
-            </nav>
+            <div class="logo"><h2>HalloPutz</h2></div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('about') }}">About</a></li>
+                    <li><a href="{{ route('myhobby') }}">My Hobby</a></li>
+                </ul>
+            </div>
+            <div class="button">
+                <button class="btn">FV</button>
+            </div>
         </header>
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="right">
+                @foreach ($tentang as $tentang)
+                <h1>{{ $tentang->nama }}</h1>
+                <h2>233140707111019</h2>
+                <p>{{ $tentang->deskripsi }}</p>
+                @endforeach
+                <div class="buttton">
+                    <button class="h-btn">Let's a Talk'</button>
+                </div>
+            <div class="social-media">
+                <li><a href="https://www.facebook.com/profile.php?id=61558524899268&mibextid=ZbWKwL"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="https://www.instagram.com/syhptraaaaaaaaa?igsh=MXd2YnYxYmQzNWtqcg=="><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/syahputra-tirta-wijaya-95ab3a285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </div>
+            </div>
 
-        @if (Route::has('login'))
-            <div class="h-14.5 hidden lg:block"></div>
-        @endif
-
-        <main class="flex justify-center">
-            <p class="font-monocat text-7xl pt-20 text-white">Portofolio Syahputra</p>
-        </main>
-        <div class="fixed inset-x-0 bottom-0 h-[50vh] z-[-1]">
-            <div class="absolute inset-x-0 bottom-0 h-full">
-                <img src="{{ URL('images/bg1.jpg') }}" alt="" class="w-full h-auto rounded-t-full" />
+            <div class="left">
+                <div class="image">
+                    <img src="{{ URL('images/Fotoputra.jpg') }}" alt=""/>
+                </div>
             </div>
         </div>
-
     </body>
 </html>
