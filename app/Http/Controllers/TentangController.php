@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tentang;
+use App\Models\Pendidikan;
 use Illuminate\Http\Request;
 
 class TentangController extends Controller  
@@ -10,12 +11,14 @@ class TentangController extends Controller
     public function index()
     {
         $tentang = tentang::all();
-        return view('dashboard', compact('tentang'));
+        $pendidikans = Pendidikan::all();
+        return view('dashboard', compact('tentang', 'pendidikans'));
     }
     public function welcome()
     {
-        $tentang = Tentang::all(); // Ambil semua data dari model Tentang
-        return view('welcome', compact('tentang'));
+        $tentang = Tentang::all();
+        $pendidikans = Pendidikan::all();
+        return view('welcome', compact('tentang', 'pendidikans'));
     }
 
     public function edit()

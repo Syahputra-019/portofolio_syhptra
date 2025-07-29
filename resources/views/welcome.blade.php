@@ -23,7 +23,7 @@
 
     <body>
         <header>
-            <div class="logo"><h2>HalloPutz</h2></div>
+            <div class="logo"><h2>Hallo</h2></div>
             <div class="navbar">
                 <ul>
                     <li>My Portofolio</li>
@@ -38,12 +38,15 @@
             <div class="right">
                 @foreach ($tentang as $tentang)
                 <h1>{{ $tentang->nama }}</h1>
-                <h2>233140707111019</h2>
                 <p>{{ $tentang->deskripsi }}</p>
+                <br>
+                    @if ($tentang->tambahan)
+                        @foreach ($tentang->tambahan as $item)
+                            <p class="text-gray-750"> {{ $item->deskripsi }}</p>
+                        @endforeach
+                    @endif
                 @endforeach
-                <div class="buttton">
-                    <button class="h-btn">Let's a Talk'</button>
-                </div>
+
             <div class="social-media">
                 <li><a href="https://www.facebook.com/profile.php?id=61558524899268&mibextid=ZbWKwL"><i class="fa-brands fa-facebook-f"></i></a></li>
                 <li><a href="https://www.instagram.com/syhptraaaaaaaaa?igsh=MXd2YnYxYmQzNWtqcg=="><i class="fa-brands fa-instagram"></i></a></li>
@@ -57,47 +60,127 @@
                 </div>
             </div>
         </div>
-    </body>
 
-    <body>
-        <!-- Hero Section -->
-        <div class="hero">
-            <div class="right">
-                <h1>Motivasi hidup</h1>
-                <p>Kegigihan dalam berusaha menjadi kunci utama untuk mencapai tujuan, 
-                karena tanpa ketekunan, kita mudah menyerah di tengah jalan ketika menghadapi tantangan.
-                Setiap langkah kecil yang kita ambil dengan tekad yang kuat, meskipun penuh rintangan, 
-                akan membawa kita lebih dekat pada impian kita. Terkadang, jalan menuju kesuksesan tidak selalu mulus, 
-                namun dengan kegigihan, kita mampu mengatasi setiap hambatan yang ada dan terus maju. 
-                Mungkin pada awalnya hasilnya tidak segera terlihat, tetapi ingatlah bahwa usaha yang konsisten dan gigih 
-                akan membuahkan hasil yang luar biasa pada waktunya. Jadi, tetaplah bersemangat dan terus berusaha, 
-                karena di balik setiap perjuangan, ada keberhasilan yang menanti.
-                </p>
+       <div class="flex justify-center items-start pt-24 bg-[rgb(1,1,34)]">
+        <div class="w-full max-w-2xl px-4">
+            <h2 class="text-3xl font-semibold text-white text-center mb-8">PENDIDIKAN</h2>
+
+<div class="space-y-4">
+    @foreach ($pendidikans as $pendidikan)
+        <div class="flex justify-between items-start 
+            @if($loop->index == 0) bg-teal-200 text-gray-800
+            @elseif($loop->index == 1) bg-gray-400 text-white
+            @else bg-gray-800 text-white
+            @endif
+            border border-white p-4 rounded shadow">
+
+            <div class="font-medium">
+                {{ $pendidikan->nama_sekolah }}<br>
+                {{ $pendidikan->deskripsi }}
             </div>
 
-            <div class="left">
-                <div class="image">
-                    <img src="{{ URL('images/putra.jpg') }}" alt=""/>
-                </div>
-            </div>
-        </div>
-    </body>
-
-    <body>
-        <!-- Hero Section -->
-        <div class="hero">
-            <div class="right">
-                <h1>My Hobby</h1>
-                <p>
-                    Hobi bermain Mobile Legends adalah kegiatan yang menyenangkan bagi banyak orang, di mana pemain dapat menikmati tantangan strategi dan kerja sama tim dalam permainan MOBA (Multiplayer Online Battle Arena). Dalam Mobile Legends, pemain berkompetisi untuk mengalahkan tim lawan dengan menggunakan berbagai karakter atau hero dengan kemampuan unik. Hobi ini juga mengasah keterampilan taktik, koordinasi tim, dan refleks. Selain keseruan permainan, pemain sering kali terlibat dalam komunitas untuk berbagi tips, trik, dan pengalaman, serta mengikuti turnamen yang semakin populer.
-                </p>
-            </div>
-
-            <div class="left">
-                <div class="image">
-                    <img src="{{ URL('images/icon1.jpg') }}" alt=""/>
-                </div>
+            <div class="border px-3 py-1 rounded text-sm font-bold ml-4 
+                @if($loop->index == 0) text-teal-800 border-teal-700
+                @else text-white border-white
+                @endif">
+                {{ $pendidikan->tahun }}
             </div>
         </div>
+    @endforeach
+</div>
+            </div>
+        </div>
+        </div>
+
+        <div class="w-full px-6 py-10 pt-24 bg-[rgb(1,1,34)]">
+            <h2 class="text-4xl font-serif text-white text-center mb-4">SKILLS</h2>
+            <hr class="border-t-2 border-gray-300 w-1/4 mx-auto mb-10">
+
+            <div class="border-4 border-white rounded-lg p-10 bg-[#2F2F2F] max-w-6xl mx-auto">
+                <div class="grid grid-cols-3 md:grid-cols-6 gap-8 text-center">
+                <!-- Skill 1 -->
+                <div>
+                    <img src="{{ URL('images/laravel.jpg') }}" alt="Laravel" class="w-16 h-16 rounded-full mx-auto mb-2">
+                    <p class="text-white font-semibold">Laravel</p>
+                </div>
+                <!-- Skill 2 -->
+                <div>
+                    <img src="{{ URL('images/flutter.jpg') }}" alt="Flutter" class="w-16 h-16 rounded-full mx-auto mb-2">
+                    <p class="text-white font-semibold">Flutter</p>
+                </div>
+                <!-- Skill 3 -->
+                <div>
+                    <img src="{{ URL('images/mysql.jpg') }}" alt="MySQL" class="w-16 h-16 rounded-full mx-auto mb-2">
+                    <p class="text-white font-semibold">MySQL</p>
+                </div>
+                <!-- Skill 4 -->
+                <div>
+                    <img src="{{ URL('images/iot.jpg') }}" alt="IoT" class="w-16 h-16 rounded-full mx-auto mb-2">
+                    <p class="text-white font-semibold">IoT</p>
+                </div>
+                <!-- Skill 5 -->
+                <div>
+                    <img src="{{ URL('images/cisco.jpg') }}" alt="Cisco Packet Tracer" class="w-16 h-16 rounded-full mx-auto mb-2">
+                    <p class="text-white font-semibold">Cisco Packet Tracer</p>
+                </div>
+                <!-- Skill 6 -->
+                <div>
+                    <img src="{{ URL('images/figma.jpg') }}" alt="Figma" class="w-16 h-16 rounded-full mx-auto mb-2">
+                    <p class="text-white font-semibold">Figma</p>
+                </div>
+                </div>
+            </div>
+            </div>
+
+        <div class="flex justify-center items-start pt-24 bg-[rgb(1,1,34)]">
+        <div class= "rounded-xl shadow-lg max-w-4xl w-full p-6 flex flex-col gap-10">
+            <h2 class="text-4xl font-serif text-white text-center mb-4">Portofolio</h2>
+            
+            <div class="flex flex-col md:flex-row gap-6 items-center border-b pb-6">
+            <img src="{{ URL('images/p1.png') }}" alt="Projek 1" class="w-64 rounded-md shadow">
+            <div>
+                <h2 class="text-xl font-bold text-white mb-2">PROJEK 1<br><span class="text-sm font-normal border-l-4 border-pink-500 pl-2">2023</span></h2>
+                <h3 class="text-lg font-semibold text-pink-600">Website Pencarian Kerja – Laravel</h3>
+                <p class="text-whitemt-2">Mengembangkan website pencarian pekerjaan menggunakan Laravel, bertanggung jawab untuk backend dan frontend, menerapkan sistem manajemen database dan otentikasi pengguna</p>
+            </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-6 items-center border-b pb-6">
+            <img src="{{ URL('images/p2.png') }}" alt="Projek 2" class="w-64 rounded-md shadow objek-fit">
+            <div>
+                <h2 class="text-xl font-bold text-white mb-2">PROJEK 2<br><span class="text-sm font-normal border-l-4 border-pink-500 pl-2">2023</span></h2>
+                <h3 class="text-lg font-semibold text-pink-600">UI/UX Aplikasi Pencarian Kerja – Figma</h3>
+                <p class="text-white
+                 mt-2">Mengembangkan UI/UX untuk aplikasi mobile pencarian pekerjaan, menerapkan prinsip-prinsip desain yang berpusat pada pengguna</p>
+            </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-6 items-center border-b pb-6">
+            <img src="{{ URL('images/p3.png') }}" alt="Projek 3" class="w-64 rounded-md shadow">
+            <div>
+                <h2 class="text-xl font-bold text-white mb-2">PROJEK 3<br><span class="text-sm font-normal border-l-4 border-pink-500 pl-2">2023</span></h2>
+                <h3 class="text-lg font-semibold text-pink-600">Smart Garden – Iot</h3>
+                <p class="text-white
+                 mt-2">Membangun sistem Smart Garden dengan sensor dan IoT.  Memantau suhu, kelembaban, dan curah hujan secara real-time. Mengendalikan pompa air otomatis berdasarkan kelembaban tanah. Menyediakan antarmuka pengguna di Adafruit IO.</p>
+            </div>
+            </div>
+
+            </div>
+
+        </div>
+        </div>        
+
     </body>
-</html>
+
+    <!-- Footer -->
+    <footer class="bg-[rgb(1,1,34)] text-white mt-10 px-6 py-8">
+    <div class="max-w-4xl mx-auto text-center border-t border-gray-700 pt-6">
+        <h2 class="text-lg font-semibold mb-2">Contact</h2>
+        <p class="mb-1">Syahputra Tirta Wijaya</p>
+        <p class="mb-1">Malang</p>
+        <p class="mb-1">0895403829601</p>
+        <p class="mb-1">syahputratirta.001@gmail.com</p>
+    </div>
+    </footer>
+
+    

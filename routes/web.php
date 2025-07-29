@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TentangController;
+use App\Http\Controllers\PendidikanController;
 use App\Http\Controllers\DeskripsiTambahanController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Controller;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,11 +30,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/tentang/edit', [TentangController::class, 'edit'])->name('tentangs.edit');
     Route::put('/tentangs/{id}', [TentangController::class, 'update'])->name('tentangs.update');
 
-    // web.php
     Route::get('/deskripsi/create', [DeskripsiTambahanController::class, 'create'])->name('deskripsi.create');
     Route::post('/deskripsi', [DeskripsiTambahanController::class, 'store'])->name('deskripsi.store');
     Route::get('/deskripsi', [DeskripsiTambahanController::class, 'index'])->name('deskripsi.index');
     Route::delete('/deskripsi/{id}', [DeskripsiTambahanController::class, 'destroy'])->name('deskripsi.destroy');
+
+    Route::get('/pendidikan', [PendidikanController::class, 'index'])->name('pendidikan.index');
+    Route::get('/pendidikan/create', [PendidikanController::class, 'create'])->name('pendidikan.create');
+    Route::post('/pendidikan', [PendidikanController::class, 'store'])->name('pendidikan.store');
+    Route::get('/pendidikan/{id}/edit', [PendidikanController::class, 'edit'])->name('pendidikan.edit');
+    Route::put('/pendidikan/{id}', [PendidikanController::class, 'update'])->name('pendidikan.update');
+    Route::delete('/pendidikan/{id}', [PendidikanController::class, 'destroy'])->name('pendidikan.destroy');
+
 
 });
 require __DIR__.'/auth.php';
