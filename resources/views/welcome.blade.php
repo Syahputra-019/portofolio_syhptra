@@ -50,9 +50,12 @@
                 @endforeach
 
             <div class="social-media">
-                <li><a href="https://www.facebook.com/profile.php?id=61558524899268&mibextid=ZbWKwL"><i class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href="https://www.instagram.com/syhptraaaaaaaaa?igsh=MXd2YnYxYmQzNWtqcg=="><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/syahputra-tirta-wijaya-95ab3a285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61558524899268&mibextid=ZbWKwL" target="_blank">
+                    <i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="https://www.instagram.com/syhptraaaaaaaaa?igsh=MXd2YnYxYmQzNWtqcg==" target="_blank">
+                    <i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/syahputra-tirta-wijaya-95ab3a285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i></a></li>
             </div>
             </div>
 
