@@ -11,7 +11,14 @@
                 <li><a href="#" class="block hover:text-pink-300"></a></li>
             </ul>
         </div>
-        <div class="p-6 text-sm text-gray-400">© 2025 Portofolio</div>
+        <div class="p-6 text-sm text-gray-400">
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="text-gray-400 hover:text-red-600">
+                    {{ __('Log Out') }}
+                </button>
+            </form>
+        </div>
     </div>
 
     <!-- Main Content -->
@@ -59,7 +66,7 @@
             <!-- Kuliah -->
            @foreach($pendidikans as $pendidikan)
                 <div class="flex justify-between items-start 
-                    {{ $loop->index == 0 ? 'bg-teal-200 text-gray-800' : ($loop->index == 1 ? 'bg-gray-400 text-white' : 'bg-gray-200 text-black') }} 
+                    {{ $loop->index == 0 ? 'bg-gray-400 text-black' : ($loop->index == 1 ? 'bg-gray-400 text-black' : 'bg-gray-400 text-black') }} 
                     border border-white p-4 rounded shadow">
                     
                     <div class="font-medium">
@@ -67,7 +74,7 @@
                         {{ $pendidikan->jurusan }}
                     </div>
                     <div class="border 
-                        {{ $loop->index == 0 ? 'border-teal-700 text-teal-800' : 'border-white text-black' }} 
+                        {{ $loop->index == 0 ? 'border-white text-black' : 'border-white text-black' }} 
                         px-3 py-1 rounded text-sm font-bold ml-4">
                         {{ $pendidikan->tahun }}
                     </div>

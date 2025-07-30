@@ -29,9 +29,11 @@
                     <li>My Portofolio</li>
                 </ul>
             </div>
+            <a href="{{ route('dashboard') }}">
             <div class="button">
-                <button class="btn">FV</button>
+                <button class="btn">Login</button>
             </div>
+            </a>
         </header>
         <!-- Hero Section -->
         <div class="hero">
@@ -65,29 +67,40 @@
         <div class="w-full max-w-2xl px-4">
             <h2 class="text-3xl font-semibold text-white text-center mb-8">PENDIDIKAN</h2>
 
-<div class="space-y-4">
+        <div class="space-y-4">
     @foreach ($pendidikans as $pendidikan)
-        <div class="flex justify-between items-start 
-            @if($loop->index == 0) bg-teal-200 text-gray-800
-            @elseif($loop->index == 1) bg-gray-400 text-white
-            @else bg-gray-800 text-white
-            @endif
-            border border-white p-4 rounded shadow">
+        @php
+    switch ($loop->index % 3) {
+        case 0:
+            $bg = 'bg-teal-200 text-gray-800';
+            $badge = 'text-teal-800 border-teal-700';
+            break;
+        case 1:
+            $bg = 'bg-gray-400 text-white';
+            $badge = 'text-white border-white';
+            break;
+        case 2:
+        default:
+            $bg = 'bg-gray-800 text-white';
+            $badge = 'text-white border-white';
+            break;
+    }
+@endphp
 
-            <div class="font-medium">
-                {{ $pendidikan->nama_sekolah }}<br>
-                {{ $pendidikan->deskripsi }}
-            </div>
+<div class="flex justify-between items-start {{ $bg }} border border-white p-4 rounded shadow">
+    <div class="font-medium">
+        {{ $pendidikan->nama_sekolah }}<br>
+        {{ $pendidikan->deskripsi }}
+    </div>
 
-            <div class="border px-3 py-1 rounded text-sm font-bold ml-4 
-                @if($loop->index == 0) text-teal-800 border-teal-700
-                @else text-white border-white
-                @endif">
-                {{ $pendidikan->tahun }}
-            </div>
-        </div>
+    <div class="border px-3 py-1 rounded text-sm font-bold ml-4 {{ $badge }}">
+        {{ $pendidikan->tahun }}
+    </div>
+</div>
+
     @endforeach
 </div>
+
             </div>
         </div>
         </div>
@@ -97,7 +110,7 @@
             <hr class="border-t-2 border-gray-300 w-1/4 mx-auto mb-10">
 
             <div class="border-4 border-white rounded-lg p-10 bg-[#2F2F2F] max-w-6xl mx-auto">
-                <div class="grid grid-cols-3 md:grid-cols-6 gap-8 text-center">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-center">
                 <!-- Skill 1 -->
                 <div>
                     <img src="{{ URL('images/laravel.jpg') }}" alt="Laravel" class="w-16 h-16 rounded-full mx-auto mb-2">
@@ -136,7 +149,7 @@
         <div class= "rounded-xl shadow-lg max-w-4xl w-full p-6 flex flex-col gap-10">
             <h2 class="text-4xl font-serif text-white text-center mb-4">Portofolio</h2>
             
-            <div class="flex flex-col md:flex-row gap-6 items-center border-b pb-6">
+            <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start border-b pb-6 text-center md:text-left">
             <img src="{{ URL('images/p1.png') }}" alt="Projek 1" class="w-64 rounded-md shadow">
             <div>
                 <h2 class="text-xl font-bold text-white mb-2">PROJEK 1<br><span class="text-sm font-normal border-l-4 border-pink-500 pl-2">2023</span></h2>
@@ -145,7 +158,7 @@
             </div>
             </div>
 
-            <div class="flex flex-col md:flex-row gap-6 items-center border-b pb-6">
+            <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start border-b pb-6 text-center md:text-left">
             <img src="{{ URL('images/p2.png') }}" alt="Projek 2" class="w-64 rounded-md shadow objek-fit">
             <div>
                 <h2 class="text-xl font-bold text-white mb-2">PROJEK 2<br><span class="text-sm font-normal border-l-4 border-pink-500 pl-2">2023</span></h2>
@@ -155,7 +168,7 @@
             </div>
             </div>
 
-            <div class="flex flex-col md:flex-row gap-6 items-center border-b pb-6">
+            <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start border-b pb-6 text-center md:text-left">
             <img src="{{ URL('images/p3.png') }}" alt="Projek 3" class="w-64 rounded-md shadow">
             <div>
                 <h2 class="text-xl font-bold text-white mb-2">PROJEK 3<br><span class="text-sm font-normal border-l-4 border-pink-500 pl-2">2023</span></h2>
