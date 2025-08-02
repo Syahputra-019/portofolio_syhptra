@@ -49,14 +49,20 @@ public function update(Request $request, $id)
     $request->validate([
         'nama_sekolah' => 'required|string|max:255',
         'jurusan' => 'nullable|string|max:255',
-        'tahun' => 'nullable|string|max:10',
+        'tahun' => 'nullable|string|max:20',
     ]);
 
     $pendidikan = Pendidikan::findOrFail($id);
-    $pendidikan->update($request->all());
+
+    // Update manual
+    $pendidikan->nama_sekolah = $request->nama_sekolah;
+    $pendidikan->jurusan = $request->jurusan;
+    $pendidikan->tahun = $request->tahun;
+    $pendidikan->save();
 
     return redirect()->route('dashboard')->with('success', 'Data pendidikan berhasil diperbarui.');
 }
+
 
 public function destroy($id)
 {

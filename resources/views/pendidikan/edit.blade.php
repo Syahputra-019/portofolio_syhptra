@@ -15,7 +15,7 @@
 
                         <label for="nama_sekolah" class="block font-medium text-sm text-gray-700">Nama sekolah</label>
                         <input type="text" name="nama_sekolah" id="nama_sekolah"
-                            value="{{ old('nama', $pendidikan->nama_sekolah ?? '') }}"
+                            value="{{ old('nama_sekolah', $pendidikan->nama_sekolah ?? '') }}"
                             class="w-full border border-gray-300 rounded-md mb-4 px-3 py-2">
 
                         <label for="jurusan" class="block font-medium text-sm text-gray-700">Jurusan</label>
