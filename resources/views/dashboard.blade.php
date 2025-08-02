@@ -21,8 +21,8 @@
         </div>
 
             <ul class="space-y-4">
-                <li><a href="#" class="block hover:text-pink-300">Tentang Saya</a></li>
-                <li><a href="#" class="block hover:text-pink-300">Pendidikan</a></li>
+                <li><a href="#tentang" class="block hover:text-pink-300">Tentang Saya</a></li>
+                <li><a href="#pendidikan" class="block hover:text-pink-300">Pendidikan</a></li>
                 <li><a href="#" class="block hover:text-pink-300"></a></li>
                 <li><a href="#" class="block hover:text-pink-300"></a></li>
             </ul>
@@ -41,7 +41,7 @@
     <div class="flex-1 p-4 md:p-10 mt-[60px] md:mt-0">
 
         <!-- TENTANG SAYA SECTION -->
-        <div class="bg-white shadow rounded-lg p-8 mb-10">
+        <div id="tentang" class="bg-white shadow rounded-lg p-8 mb-10">
             <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-6">
                 <!-- Konten Kiri -->
                 <div class="md:w-1/2 md:pr-10 text-center md:text-left">
@@ -73,7 +73,7 @@
         </div>
 
         <!-- Pendidikan -->
-        <div class="bg-white shadow rounded-lg p-8 mb-10">
+        <div id="pendidikan" class="bg-white shadow rounded-lg p-8 mb-10">
             <div class="w-full max-w-2xl px-4">
                 <h2 class="text-3xl font-bold mb-6">Pendidikan</h2>
 
@@ -142,5 +142,30 @@
       });
     });
   </script>
+
+  <script>
+    // Smooth scroll ke konten saat klik menu sidebar
+    document.querySelectorAll('.scroll-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault(); // cegah perilaku default anchor
+            const targetId = this.getAttribute('href').substring(1);
+            const targetEl = document.getElementById(targetId);
+
+            if (targetEl) {
+                window.scrollTo({
+                    top: targetEl.offsetTop - 70, // offset untuk header tetap (kalau ada)
+                    behavior: 'smooth'
+                });
+
+                // Tutup sidebar di mobile
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('overlay');
+                sidebar.classList.add('hidden');
+                overlay.classList.add('hidden');
+            }
+        });
+    });
+</script>
+
 
 </x-app-layout>
