@@ -26,7 +26,7 @@
                     <li><a href="#tentang" class="block hover:text-pink-300">Tentang Saya</a></li>
                     <li><a href="#pendidikan" class="block hover:text-pink-300">Pendidikan</a></li>
                     <li><a href="#skill" class="block hover:text-pink-300">Skill</a></li>
-                    <li><a href="#" class="block hover:text-pink-300"></a></li>
+                    <li><a href="#portofolio" class="block hover:text-pink-300">Portofolio</a></li>
                 </ul>
             </div>
             <div class="p-6 text-sm text-gray-400">
