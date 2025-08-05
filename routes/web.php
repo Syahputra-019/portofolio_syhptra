@@ -2,11 +2,12 @@
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SkillController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\PendidikanController;
+use App\Http\Controllers\PortofolioController;
 use App\Http\Controllers\DeskripsiTambahanController;
-use App\Http\Controllers\SkillController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -49,6 +50,15 @@ Route::middleware('auth')->group(function () {
     Route::put('/dashboard/skills/{id}', [SkillController::class, 'update'])->name('skills.update');
     Route::delete('/dashboard/skills/{id}', [SkillController::class, 'destroy'])->name('skills.destroy');
     Route::get('/dashboard/skills', [SkillController::class, 'index'])->name('skills.index');
+
+    Route::get('/dashboard/portofolio/create', [PortofolioController::class, 'create'])->name('portofolio.create');
+    Route::post('/dashboard/portofolio', [PortofolioController::class, 'store'])->name('portofolio.store');
+    Route::get('/dashboard/portofolio/{id}/edit', [PortofolioController::class, 'edit'])->name('portofolio.edit');
+    Route::put('/dashboard/portofolio/{id}', [PortofolioController::class, 'update'])->name('portofolio.update');
+    Route::delete('/dashboard/portofolio/{id}', [PortofolioController::class, 'destroy'])->name('portofolio.destroy');
+    Route::get('/dashboard/portofolio', [PortofolioController::class, 'index'])->name('portofolio.index');
+
+
 
 
 

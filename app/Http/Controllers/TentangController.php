@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Skill;
 use App\Models\Tentang;
 use App\Models\Pendidikan;
-use App\Models\Skill;
+use App\Models\Portofolio;
 use Illuminate\Http\Request;
 
 class TentangController extends Controller  
@@ -14,14 +15,16 @@ class TentangController extends Controller
         $tentang = tentang::all();
         $pendidikans = Pendidikan::all();
         $skills = Skill::all();
-        return view('dashboard', compact('tentang', 'pendidikans', 'skills'));
+        $portofolios = Portofolio::all();
+        return view('dashboard', compact('tentang', 'pendidikans', 'skills', 'portofolios'));
     }
     public function welcome()
     {
         $tentang = Tentang::all();
         $pendidikans = Pendidikan::all();
         $skills = Skill::all();
-        return view('welcome', compact('tentang', 'pendidikans', 'skills'));
+        $portofolios = Portofolio::all();
+        return view('welcome', compact('tentang', 'pendidikans', 'skills', 'portofolios'));
     }
 
     public function edit()

@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             // TentangsTableSeeder::class,
             // DeskripsiTambahansTableSeeder::class,
             // PendidikansTableSeeder::class,
-            SkillSeeder::class,
+            // SkillSeeder::class,
+            PortofolioSeeder::class,
         ]);
     }
 }

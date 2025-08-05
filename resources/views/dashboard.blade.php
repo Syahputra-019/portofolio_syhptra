@@ -139,7 +139,7 @@
 
                                 <div class="flex space-x-2 mt-4">
                                     <a href="{{ route('skills.edit', $skill->id) }}"
-                                        class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-400">Edit</a>
+                                        class="bg-gray-600 text-white px-3 py-1 rounded hover:bg-yellow-400">Edit</a>
 
                                     <form action="{{ route('skills.destroy', $skill->id) }}" method="POST"
                                         onsubmit="return confirm('Yakin ingin menghapus skill ini?')">
@@ -161,8 +161,54 @@
                 </div>
             </div>
 
+            {{-- portofolio --}}
+            <div id="portofolio" class="bg-white shadow rounded-lg p-8 mb-10">
+                <div class="w-full max-w-4xl px-4">
+                    <h2 class="text-3xl font-bold mb-6">Portofolio</h2>
 
+                    <div class="space-y-6">
+                        @foreach ($portofolios as $portofolio)
+                            <div
+                                class="flex flex-col sm:flex-row sm:items-center sm:justify-between border border-gray-300 bg-gray-100 p-4 rounded shadow">
+                                <div class="flex items-center gap-4">
+                                    @if ($portofolio->gambar)
+                                        <img src="{{ asset('storage/' . $portofolio->gambar) }}"
+                                            alt="{{ $portofolio->nama }}" class="w-24 sm:w-32 rounded shadow">
+                                    @endif
+                                    <div>
+                                        <h2 class="font-bold text-lg mb-2">{{ $portofolio->judul }}</h3>
+                                            <h2 class="font-bold text-lg mb-2">{{ $portofolio->tahun }}</h3>
+                                                <p class="text-sm text-gray-700 break-words">
+                                                    {{ $portofolio->deskripsi }}</p>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-2 mt-4">
+                                    <a href="{{ route('portofolio.edit', $portofolio->id) }}"
+                                        class="bg-gray-600 text-white px-3 py-1 rounded hover:bg-yellow-400 transition text-sm">
+                                        Edit
+                                    </a>
+                                    <form action="{{ route('portofolio.destroy', $portofolio->id) }}" method="POST"
+                                        onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit"
+                                            class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-500 transition text-sm">
+                                            Hapus
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
 
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <a href="{{ route('portofolio.create') }}"
+                            class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-500 transition">
+                            Tambah
+                        </a>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>

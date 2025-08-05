@@ -127,37 +127,26 @@
         <div class="flex justify-center items-start pt-24 bg-[rgb(1,1,34)]">
         <div class= "rounded-xl shadow-lg max-w-4xl w-full p-6 flex flex-col gap-10">
             <h2 class="text-4xl font-serif text-white text-center mb-4">Portofolio</h2>
-            
+            @foreach ($portofolios as $item)
             <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start border-b pb-6 text-center md:text-left">
-            <img src="{{ URL('images/p1.png') }}" alt="Projek 1" class="w-64 rounded-md shadow">
             <div>
-                <h2 class="text-xl font-bold text-white mb-2">PROJEK 1<br><span class="text-sm font-normal border-l-4 border-pink-500 pl-2">2023</span></h2>
-                <h3 class="text-lg font-semibold text-pink-600">Website Pencarian Kerja – Laravel</h3>
-                <p class="text-whitemt-2">Mengembangkan website pencarian pekerjaan menggunakan Laravel, bertanggung jawab untuk backend dan frontend, menerapkan sistem manajemen database dan otentikasi pengguna</p>
+                
+                    <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start border-b pb-6 text-center md:text-left">
+                        <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}" class="w-64 rounded-md shadow">
+                        <div>
+                            <h2 class="text-xl font-bold text-white mb-2">
+                                {{ strtoupper($item->judul) }}<br>
+                                <span class="text-sm font-normal border-l-4 border-pink-500 pl-2">{{ $item->tahun }}</span>
+                            </h2>
+                            <p class="text-white mt-2">{{ $item->deskripsi }}</p>
+                        </div>
+                    </div>
+                
             </div>
             </div>
-
-            <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start border-b pb-6 text-center md:text-left">
-            <img src="{{ URL('images/p2.png') }}" alt="Projek 2" class="w-64 rounded-md shadow objek-fit">
-            <div>
-                <h2 class="text-xl font-bold text-white mb-2">PROJEK 2<br><span class="text-sm font-normal border-l-4 border-pink-500 pl-2">2023</span></h2>
-                <h3 class="text-lg font-semibold text-pink-600">UI/UX Aplikasi Pencarian Kerja – Figma</h3>
-                <p class="text-white
-                 mt-2">Mengembangkan UI/UX untuk aplikasi mobile pencarian pekerjaan, menerapkan prinsip-prinsip desain yang berpusat pada pengguna</p>
+            @endforeach
             </div>
-            </div>
-
-            <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start border-b pb-6 text-center md:text-left">
-            <img src="{{ URL('images/p3.png') }}" alt="Projek 3" class="w-64 rounded-md shadow">
-            <div>
-                <h2 class="text-xl font-bold text-white mb-2">PROJEK 3<br><span class="text-sm font-normal border-l-4 border-pink-500 pl-2">2023</span></h2>
-                <h3 class="text-lg font-semibold text-pink-600">Smart Garden – Iot</h3>
-                <p class="text-white
-                 mt-2">Membangun sistem Smart Garden dengan sensor dan IoT.  Memantau suhu, kelembaban, dan curah hujan secara real-time. Mengendalikan pompa air otomatis berdasarkan kelembaban tanah. Menyediakan antarmuka pengguna di Adafruit IO.</p>
-            </div>
-            </div>
-
-            </div>
+        </div>
 
         </div>
         </div>        
