@@ -114,39 +114,15 @@
 
             <div class="border-4 border-white rounded-lg p-10 bg-[#2F2F2F] max-w-6xl mx-auto">
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-center">
-                <!-- Skill 1 -->
+                @foreach ($skills as $skill)
                 <div>
-                    <img src="{{ URL('images/laravel.jpg') }}" alt="Laravel" class="w-16 h-16 rounded-full mx-auto mb-2">
-                    <p class="text-white font-semibold">Laravel</p>
+                    <img src="{{ asset('storage/' . $skill->logo) }}" alt="{{ $skill->nama }}" class="w-16 h-16 rounded-full mx-auto mb-2">
+                    <p class="text-white font-semibold">{{ $skill->nama }}</p>
                 </div>
-                <!-- Skill 2 -->
-                <div>
-                    <img src="{{ URL('images/flutter.jpg') }}" alt="Flutter" class="w-16 h-16 rounded-full mx-auto mb-2">
-                    <p class="text-white font-semibold">Flutter</p>
-                </div>
-                <!-- Skill 3 -->
-                <div>
-                    <img src="{{ URL('images/mysql.jpg') }}" alt="MySQL" class="w-16 h-16 rounded-full mx-auto mb-2">
-                    <p class="text-white font-semibold">MySQL</p>
-                </div>
-                <!-- Skill 4 -->
-                <div>
-                    <img src="{{ URL('images/iot.jpg') }}" alt="IoT" class="w-16 h-16 rounded-full mx-auto mb-2">
-                    <p class="text-white font-semibold">IoT</p>
-                </div>
-                <!-- Skill 5 -->
-                <div>
-                    <img src="{{ URL('images/cisco.jpg') }}" alt="Cisco Packet Tracer" class="w-16 h-16 rounded-full mx-auto mb-2">
-                    <p class="text-white font-semibold">Cisco Packet Tracer</p>
-                </div>
-                <!-- Skill 6 -->
-                <div>
-                    <img src="{{ URL('images/figma.jpg') }}" alt="Figma" class="w-16 h-16 rounded-full mx-auto mb-2">
-                    <p class="text-white font-semibold">Figma</p>
-                </div>
+                @endforeach
                 </div>
             </div>
-            </div>
+        </div>
 
         <div class="flex justify-center items-start pt-24 bg-[rgb(1,1,34)]">
         <div class= "rounded-xl shadow-lg max-w-4xl w-full p-6 flex flex-col gap-10">

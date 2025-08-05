@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tentang;
 use App\Models\Pendidikan;
+use App\Models\Skill;
 use Illuminate\Http\Request;
 
 class TentangController extends Controller  
@@ -12,13 +13,15 @@ class TentangController extends Controller
     {
         $tentang = tentang::all();
         $pendidikans = Pendidikan::all();
-        return view('dashboard', compact('tentang', 'pendidikans'));
+        $skills = Skill::all();
+        return view('dashboard', compact('tentang', 'pendidikans', 'skills'));
     }
     public function welcome()
     {
         $tentang = Tentang::all();
         $pendidikans = Pendidikan::all();
-        return view('welcome', compact('tentang', 'pendidikans'));
+        $skills = Skill::all();
+        return view('welcome', compact('tentang', 'pendidikans', 'skills'));
     }
 
     public function edit()

@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\PendidikanController;
 use App\Http\Controllers\DeskripsiTambahanController;
+use App\Http\Controllers\SkillController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -41,6 +42,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/pendidikan/{id}/edit', [PendidikanController::class, 'edit'])->name('pendidikan.edit');
     Route::put('/pendidikan/{id}', [PendidikanController::class, 'update'])->name('pendidikan.update');
     Route::delete('/pendidikan/{id}', [PendidikanController::class, 'destroy'])->name('pendidikan.destroy');
+
+    Route::get('/dashboard/skills/create', [SkillController::class, 'create'])->name('skills.create');
+    Route::post('/dashboard/skills', [SkillController::class, 'store'])->name('skills.store');
+    Route::get('/dashboard/skills/{id}/edit', [SkillController::class, 'edit'])->name('skills.edit');
+    Route::put('/dashboard/skills/{id}', [SkillController::class, 'update'])->name('skills.update');
+    Route::delete('/dashboard/skills/{id}', [SkillController::class, 'destroy'])->name('skills.destroy');
+    Route::get('/dashboard/skills', [SkillController::class, 'index'])->name('skills.index');
+
+
 
 
 });
