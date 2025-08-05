@@ -155,13 +155,20 @@
 
     <!-- Footer -->
     <footer class="bg-[rgb(1,1,34)] text-white mt-10 px-6 py-8">
-    <div class="max-w-4xl mx-auto text-center border-t border-gray-700 pt-6">
-        <h2 class="text-lg font-semibold mb-2">Contact</h2>
-        <p class="mb-1">Syahputra Tirta Wijaya</p>
-        <p class="mb-1">Malang</p>
-        <p class="mb-1">0895403829601</p>
-        <p class="mb-1">syahputratirta.001@gmail.com</p>
-    </div>
+        <div class="max-w-4xl mx-auto text-center border-t border-gray-700 pt-6">
+            <h2 class="text-lg font-semibold mb-2">Contact</h2>
+            <p class="mb-1">Syahputra Tirta Wijaya</p>
+            <p class="mb-1">Malang</p>
+            <p class="mb-1">
+                <a href="https://wa.me/62895403829601" target="_blank" class="text-blue-400 hover:underline">
+                    0895403829601
+                </a>
+            </p>
+            <p class="mb-1">
+                <a href="mailto:syahputratirta.001@gmail.com" class="text-blue-400 hover:underline">
+                    syahputratirta.001@gmail.com
+                </a>
+            </p>
+        </div>
     </footer>
-
     
