@@ -14,15 +14,15 @@ class PendidikansTableSeeder extends Seeder
     {
         DB::table('pendidikans')->insert([
             [
-                'nama_sekolah' => 'SMK Negeri 1 Jakarta',
-                'jurusan' => 'Teknik Komputer dan Jaringan',
+                'nama_sekolah' => 'SMA 9 Malang',
+                'jurusan' => 'MIPA',
                 'tahun' => '2018 - 2021',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'nama_sekolah' => 'Universitas Indonesia',
-                'jurusan' => 'Ilmu Komputer',
+                'nama_sekolah' => 'Universitas Brawijaya',
+                'jurusan' => 'TI',
                 'tahun' => '2021 - Sekarang',
                 'created_at' => now(),
                 'updated_at' => now(),

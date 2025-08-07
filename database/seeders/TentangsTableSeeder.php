@@ -18,12 +18,6 @@ class TentangsTableSeeder extends Seeder
                 'deskripsi' => 'Mahasiswa Informatika yang antusias dalam pengembangan web dan mobile.',
                 'created_at' => now(),
                 'updated_at' => now()
-            ],
-            [
-                'nama' => 'CraftedWorks',
-                'deskripsi' => 'Platform freelance untuk penulis dan desainer.',
-                'created_at' => now(),
-                'updated_at' => now()
             ]
         ]);
     }

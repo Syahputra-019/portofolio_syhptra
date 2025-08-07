@@ -5,21 +5,37 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Portofolio;
+use Illuminate\Support\Facades\DB;
 
 class PortofolioSeeder extends Seeder
 {
-    public function run(): void
+        public function run(): void
     {
-        Portofolio::create([
-            'nama' => 'Website Profil',
-            'deskripsi' => 'Website portofolio pribadi menggunakan Laravel dan Tailwind CSS.',
-            'gambar' => 'portofolio/website-profil.png',
-        ]);
-
-        Portofolio::create([
-            'nama' => 'Aplikasi Tugas',
-            'deskripsi' => 'Aplikasi pengelola tugas harian menggunakan Vue.js.',
-            'gambar' => 'portofolio/aplikasi-tugas.png',
+        DB::table('portofolios')->insert([
+            [
+                'judul' => 'Membuat website pencarian pekerjaan',
+                'tahun' => '2025',
+                'deskripsi' => 'membuat website pencarian pekerjaan dengan laravel.',
+                'gambar' => 'skills/p1.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'judul' => 'Desain UI Aplikasi Mobile',
+                'tahun' => '2025',
+                'deskripsi' => 'Mendesain antarmuka pengguna untuk aplikasi mobile pencarian pekerjaan.',
+                'gambar' => 'skills/p2.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'judul' => 'Iot',
+                'tahun' => '2025',
+                'deskripsi' => 'Membuat smart garden, yang terdapat penyiraman otomatis, deteksi suhu, dan deteksi hujan.',
+                'gambar' => 'skills/p3.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }

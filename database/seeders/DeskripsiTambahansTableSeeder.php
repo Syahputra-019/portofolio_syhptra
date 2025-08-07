@@ -16,16 +16,10 @@ class DeskripsiTambahansTableSeeder extends Seeder
         DB::table('deskripsi_tambahans')->insert([
             [
                 'tentang_id' => 1, // Sesuaikan dengan ID yang ada di tabel `tentangs`
-                'deskripsi' => 'Ini adalah deskripsi tambahan pertama.',
+                'deskripsi' => 'Saya merupakan anak vokasi universitas brawijaya',
                 'created_at' => now(),
                 'updated_at' => now(),
-            ],
-            [
-                'tentang_id' => 1,
-                'deskripsi' => 'Ini adalah deskripsi tambahan kedua.',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
+            ]
         ]);
     }
 }
