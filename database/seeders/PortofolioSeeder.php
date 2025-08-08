@@ -13,17 +13,17 @@ class PortofolioSeeder extends Seeder
     {
         DB::table('portofolios')->insert([
             [
-                'judul' => 'Membuat website pencarian pekerjaan',
+                'judul' => 'Website pencarian pekerjaan',
                 'tahun' => '2025',
-                'deskripsi' => 'membuat website pencarian pekerjaan dengan laravel.',
+                'deskripsi' => 'Mengembangkan website pencarian pekerjaan menggunakan Laravel, bertanggung jawab untuk backend dan frontend, menerapkan sistem manajemen database dan otentikasi pengguna.',
                 'gambar' => 'skills/p1.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'judul' => 'Desain UI Aplikasi Mobile',
+                'judul' => 'UI/UX Aplikasi Pencarian Kerja',
                 'tahun' => '2025',
-                'deskripsi' => 'Mendesain antarmuka pengguna untuk aplikasi mobile pencarian pekerjaan.',
+                'deskripsi' => 'Mengembangkan UI/UX untuk aplikasi mobile pencarian pekerjaan, menerapkan prinsip-prinsip desain yang berpusat pada pengguna.',
                 'gambar' => 'skills/p2.png',
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -31,7 +31,7 @@ class PortofolioSeeder extends Seeder
             [
                 'judul' => 'Iot',
                 'tahun' => '2025',
-                'deskripsi' => 'Membuat smart garden, yang terdapat penyiraman otomatis, deteksi suhu, dan deteksi hujan.',
+                'deskripsi' => 'Membangun sistem Smart Garden dengan sensor dan IoT.  Memantau suhu, kelembaban, dan curah hujan secara real-time. Mengendalikan pompa air otomatis berdasarkan kelembaban tanah. Menyediakan antarmuka pengguna di Adafruit IO.',
                 'gambar' => 'skills/p3.png',
                 'created_at' => now(),
                 'updated_at' => now(),

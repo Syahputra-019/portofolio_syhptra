@@ -1,4 +1,5 @@
 <x-app-layout>
+<html lang="en" class="scroll-smooth">
     <div class="min-h-screen flex bg-gray-100">
         <!-- Tombol Toggle (Mobile Only) -->
         <div
@@ -10,7 +11,7 @@
         </div>
         <!-- Sidebar -->
         <div id="sidebar"
-            class="w-64 bg-[rgb(1,1,34)] text-white flex-col justify-between hidden md:flex absolute md:static z-50 h-full md:h-auto">
+            class="w-64 bg-[rgb(1,1,34)] text-white flex-col justify-between hidden md:flex md:fixed md:top-0 md:left-0 md:h-screen z-50">
             <div class="p-6">
                 <!-- Header Sidebar: Dashboard + Tombol Panah -->
                 <div class="flex items-center justify-between px-2 pt-6 pb-4 md:block">
@@ -29,10 +30,12 @@
                     <li><a href="#portofolio" class="block hover:text-pink-300">Portofolio</a></li>
                 </ul>
             </div>
-            <div class="p-6 text-sm text-gray-400">
+            
+            <div class="p-6 text-sm text-gray-300">
+                <a href="{{ route('home') }}" class="hover:text-white">Landing Page</a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit" class="text-gray-400 hover:text-red-600">
+                    <button type="submit" class="text-gray-300 hover:text-red-600">
                         {{ __('Log Out') }}
                     </button>
                 </form>
@@ -40,7 +43,7 @@
         </div>
         <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden md:hidden z-30"></div>
         <!-- Main Content -->
-        <div class="flex-1 p-4 md:p-10 mt-[60px] md:mt-0">
+        <div class="flex-1 p-4 md:p-10 mt-[60px] md:mt-0 md:ml-64">
 
             <!-- TENTANG SAYA SECTION -->
             <div id="tentang" class="bg-white shadow rounded-lg p-8 mb-10">
@@ -268,6 +271,5 @@
             });
         });
     </script>
-
-
+</html>
 </x-app-layout>
